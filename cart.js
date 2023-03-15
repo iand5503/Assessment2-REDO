@@ -35,6 +35,12 @@ const cart = [
 
 //CODE HERE
 
+const totalCost = cart.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.price;
+  }, 0);
+  
+  console.log(totalCost);
+
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
 
@@ -55,7 +61,11 @@ const cart = [
 
 //CODE HERE
 
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    const totalWithTax = cartTotal * (1 + tax);
+    const finalPrice = totalWithTax - couponValue;
+    return finalPrice;
+  }
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -77,8 +87,11 @@ const cart = [
     Your object should have at least 4 properties. 
 */
 
-/*
-    TEXT ANSWER HERE
+
+    //name, email, phone, address
+   // I chose these properties because they are all important for a restaurant to have in order to complete a delivery order successfully. The name, email, and phone properties are necessary to contact the customer if there are any issues with the order, and to provide order confirmation and delivery updates. The address property is crucial to ensure that the food is delivered to the correct location.
+
+
 
 */
 
@@ -88,3 +101,14 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: 'John Doe',
+    email: 'johndoe@gmail.com',
+    phone: '123-456-7890',
+    address: {
+      street: '123 Main St',
+      city: 'LA',
+      state: 'CA',
+      zip: '85142'
+    }
+  }
